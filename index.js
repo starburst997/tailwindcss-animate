@@ -29,6 +29,27 @@ module.exports = plugin(
 				"--tw-exit-translate-x": "initial",
 				"--tw-exit-translate-y": "initial",
 			},
+			// Fix for broken animation when multiple are run at the same time (iOS 15 maybe others?) 
+			"@keyframes enter-alt": theme("keyframes.enter"),
+			"@keyframes exit-alt": theme("keyframes.exit"),
+			".animate-in-alt": {
+				animationName: "enter-alt",
+				animationDuration: theme("animationDuration.DEFAULT"),
+				"--tw-enter-opacity": "initial",
+				"--tw-enter-scale": "initial",
+				"--tw-enter-rotate": "initial",
+				"--tw-enter-translate-x": "initial",
+				"--tw-enter-translate-y": "initial",
+			},
+			".animate-out-alt": {
+				animationName: "exit-alt",
+				animationDuration: theme("animationDuration.DEFAULT"),
+				"--tw-exit-opacity": "initial",
+				"--tw-exit-scale": "initial",
+				"--tw-exit-rotate": "initial",
+				"--tw-exit-translate-x": "initial",
+				"--tw-exit-translate-y": "initial",
+			},
 		})
 
 		matchUtilities(
